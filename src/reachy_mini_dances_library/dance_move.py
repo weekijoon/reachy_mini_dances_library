@@ -13,7 +13,7 @@ if TYPE_CHECKING:
     from reachy_mini.daemon.backend.abstract import Backend
 
 
-from reachy_mini.motion import Move
+from reachy_mini.motion.move import Move
 from .collection.dance import AVAILABLE_MOVES
 from reachy_mini.utils import create_head_pose
 
