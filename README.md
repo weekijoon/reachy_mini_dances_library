@@ -15,5 +15,5 @@ pip install -e .
 python examples/dance_demo.py
 
 # Play a specific choreography
-python examples/dance_demo.py --choreography choreographies/my_choreo.json
+python examples/dance_demo.py --choreography ./examples/choreographies/another_one_bites_the_dust.json --no-keyboard
 ```
