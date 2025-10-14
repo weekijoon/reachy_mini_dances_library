@@ -252,7 +252,7 @@ def main(config: Config) -> None:
     last_status_print_time, last_help_print_time = 0.0, 0.0
     bpm, amplitude_scale = config.bpm, config.amplitude_scale
 
-    with ReachyMini(use_sim=True) as mini:
+    with ReachyMini(use_sim=False) as mini:
         try:
             print("Connecting to Reachy Mini...")
 
@@ -443,7 +443,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--beats-per-sequence",
         type=int,
-        default=16,
+        default=8,
         help="In interactive mode, automatically change move after this many beats.",
     )
     parser.add_argument(
