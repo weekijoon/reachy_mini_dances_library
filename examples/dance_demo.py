@@ -30,6 +30,10 @@ from reachy_mini import ReachyMini, utils
 from reachy_mini_dances_library.collection.dance import AVAILABLE_MOVES
 
 
+# Moves that are too dynamic for the default interactive cycle.
+DEFAULT_SKIPPED_MOVES: List[str] = ["headbanger_combo"]
+
+
 # --- Configuration ---
 @dataclass
 class Config:
@@ -235,7 +239,12 @@ def main(config: Config) -> None:
             daemon=True,
         ).start()
 
-    move_names: List[str] = list(AVAILABLE_MOVES.keys())
+    skip_moves = set(DEFAULT_SKIPPED_MOVES)
+    move_names: List[str] = [
+        name for name in AVAILABLE_MOVES.keys() if name not in skip_moves
+    ]
+    if not move_names:
+        move_names = list(AVAILABLE_MOVES.keys())
     waveforms: List[str] = ["sin", "cos", "triangle", "square", "sawtooth"]
 
     try:
