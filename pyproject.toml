@@ -10,7 +10,7 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "reachy_mini==0.1.0", # Not released yet (should be soon)
+    "reachy_mini", # Not released yet (should be soon)
     # "reachy_mini@git+ssh://git@github.com/pollen-robotics/reachy_mini@develop",
 ]
 
